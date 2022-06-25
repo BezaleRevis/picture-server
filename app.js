@@ -30,6 +30,11 @@ app.use((req, res, next) => {
   next();
 });
 
+app.get("/", (req, res) => {
+  // testing
+  res.status(200).send("Hello tzali pictures project");
+});
+
 async function startServer() {
   // setting up the server
   if (cluster.isMaster) {
