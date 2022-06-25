@@ -44,12 +44,13 @@ async function startServer() {
       cluster.fork();
     }
   } else {
-    app.listen(PORT, () => {
-      console.log(`server started on port ${PORT}`);
-    });
+    console.log("problem with sql");
   }
 }
 startServer();
+app.listen(PORT, () => {
+  console.log(`server started on port ${PORT}`);
+});
 //using routers
 app.use("/", router);
 
