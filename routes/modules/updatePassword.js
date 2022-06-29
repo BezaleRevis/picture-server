@@ -8,7 +8,7 @@ const updatePassword = update.post("/", (req, res) => {
   console.log(newPassword + "," + username + " in update");
   try {
     const query = con.query(
-      `SELECT * FROM register WHERE username = ?`,
+      `SELECT username FROM register WHERE username = ?`,
       [username],
       (err, result) => {
         if (err) {
