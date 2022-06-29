@@ -9,7 +9,7 @@ const login = router.post("/", (req, res) => {
   console.log(username + ", " + password + " in login");
   try {
     const query = con.query(
-      `SELECT * FROM register WHERE username = ? AND password = ?`,
+      `SELECT username,password FROM register WHERE username = ? AND password = ?`,
       [username, password],
       (err, result) => {
         if (err) {
